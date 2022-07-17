@@ -1,0 +1,155 @@
+#:kivy 2.1.0
+<ScreenOne>:
+	BoxLayout:
+		Image:
+			source: 'noteimg.png'
+			allow_stretch: True
+			size_hint_y: 1.2
+	BoxLayout:
+	    orientation: 'vertical'
+		padding: 200
+		spacing: 50
+	    Image:
+		    source: 'logo.png.png'
+			size_hint_x: 1
+			size_hint_y: 2.5
+			width: 50
+			height: 50
+			allow_stretch: True
+		BoxLayout:
+            height: "60dp"
+            size_hint_y: None
+            Button:
+                size_hint_x: 2
+				text: "Click to take a Picture!"
+				background_color: 1, 0, 1, 1
+			    bold: True
+				on_press:
+				    root.callback()
+				    root.manager.transition.direction = 'left'
+				    root.manager.transition.duration = 1
+				    root.switch_screen()		
+<ScreenTwo>:
+	BoxLayout:
+	    orientation: 'vertical'
+		padding: 100
+		spacing: 50
+	    Image:
+			id: img_label
+		    #source: 'src/plainpic.jpg'
+			size_hint_x: 1
+			size_hint_y: 2.5
+			width: 100
+			height: 100
+			allow_stretch: True
+	# BoxLayout:
+	#     orientation: 'vertical'
+	# 	padding: 200
+	# 	spacing: 50
+		BoxLayout:
+			height: "60dp"
+			size_hint_y: None
+			pos: '10dp','10dp'
+			#pos_hint: {'x':0 , 'y':0 }
+			# Button:
+			# 	size_hint_x: 2
+			# 	text: "Retake Picture"
+			# 	background_color: 1, 0, 1, 1
+			# 	bold: True
+			# 	on_press:
+			# 		root.callback()
+			# 		root.manager.transition.direction = 'right'
+			# 		root.manager.transition.duration = 1
+			# 		root.manager.current = 'screen_two'
+					
+			Button:
+				size_hint_x: 2
+				text: "Show Emotion"
+				background_color: 1, 0, 1, 1
+				bold: True
+				on_press:
+					# root.callemotion()
+					root.manager.transition.direction = 'left'
+					root.manager.transition.duration = 1
+					root.switch_screen()
+					#root.manager.current = 'screen_three'	
+	
+<ScreenThree>:
+    BoxLayout:
+		Image:
+			source: 'noteimg.png'
+			allow_stretch: True
+			size_hint_y: 1.2
+	BoxLayout:
+	    orientation: 'vertical'
+		padding: 200
+		spacing: 40
+		BoxLayout:
+		    height: "10dp"
+		    size_hint_y: None
+		    Label:
+				text:'Emotion detected is:'
+				font_size: 25
+			Label:
+				
+				id: emotion_label
+				text:''
+				font_size: 25
+			
+				#self.bl1=self.ids['angrybirds']
+				#font_size: self.height/10
+				# background_color: 1, 0, 1, 1
+				# size_hint_x: 2
+			# 	on_press:
+			# 		emo=root.callemotion()
+			# # TextInput:
+			# 	text:emo
+		BoxLayout:
+		    height: "60dp"
+            size_hint_y: None
+            Button:
+                size_hint_x: 2
+				text: "Play music"
+				background_color: 1, 0, 1, 1
+			    bold: True
+				on_press:
+					root.musicplayer()
+				    root.manager.transition.direction = 'left'
+				    root.manager.transition.duration = 1
+				    root.manager.current = 'screen_five'
+
+<ScreenFive>:
+	BoxLayout:
+	    orientation: 'vertical'
+		padding: 100
+		spacing: 50
+	# BoxLayout:
+	#     orientation: 'vertical'
+	# 	padding: 200
+	# 	spacing: 50
+		BoxLayout:
+			height: "60dp"
+			size_hint_y: None
+			pos: '10dp','10dp'
+			#pos_hint: {'x':0 , 'y':0 }
+			#new img not accepted:(
+			# Button:
+            #     size_hint_x: 2
+			# 	text: "Home"
+			# 	background_color: 1, 0, 1, 1
+			#     bold: True
+			# 	on_press:
+			# 	    root.manager.transition.direction = 'right'
+			# 		root.manager.transition.duration = 1
+			# 		root.switch_screen()		
+			Button:
+				size_hint_x:2
+				text: "QUIT"
+				background_color: 1, 0, 1, 1
+				#size_hint: .45, .45
+        		pos: 100, 500
+				bold: True
+				on_press:
+					app.Exit()
+					
+

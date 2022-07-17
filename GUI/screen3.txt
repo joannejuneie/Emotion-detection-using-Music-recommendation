@@ -1,0 +1,26 @@
+<ScreenThree>:
+	BoxLayout:
+		# Image:
+		# 	source: 'src/generated_pic.jpg'
+		# 	allow_stretch: True
+	BoxLayout:
+	    orientation: 'vertical'
+		padding: 50
+		BoxLayout:
+		    height: "60dp"
+			spacing:100
+			padding:100
+            size_hint_y: None
+		BoxLayout:
+			Label:
+				text:'Emotion detected is:'
+		Button:
+			size_hint_x: 2
+			text: "Play Music"
+			background_color: 1, 0, 1, 1
+			bold: True
+			on_press:
+				root.musicplayer()
+				root.manager.transition.direction = 'left'
+				root.manager.transition.duration = 1
+				root.manager.current = 'screen_four'
