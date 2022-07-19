@@ -31,6 +31,11 @@
 				    root.switch_screen()		
 <ScreenTwo>:
 	BoxLayout:
+		Image:
+			source: 'noteimg.png'
+			allow_stretch: True
+			size_hint_y: 1.2
+	BoxLayout:
 	    orientation: 'vertical'
 		padding: 100
 		spacing: 50
@@ -75,6 +80,11 @@
 					#root.manager.current = 'screen_three'	
 	
 <ScreenThree>:
+	BoxLayout:
+		Image:
+			source: 'noteimg.png'
+			allow_stretch: True
+			size_hint_y: 1.2
     BoxLayout:
 		Image:
 			source: 'noteimg.png'
@@ -120,6 +130,11 @@
 
 <ScreenFive>:
 	BoxLayout:
+		Image:
+			source: 'noteimg.png'
+			allow_stretch: True
+			size_hint_y: 1.2
+	BoxLayout:
 	    orientation: 'vertical'
 		padding: 100
 		spacing: 50
@@ -150,6 +165,6 @@
         		pos: 100, 500
 				bold: True
 				on_press:
-					app.Exit()
+					app.stop()
 					
 
